@@ -1,28 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import CircleContainer from './CircleContainer'
+import uuid from 'react-uuid'
 import Container from "./Container"
 import "./home.css"
 
-// const getRandomColor=()=>{
-//     const newArray=[]
 
-//     const isColorExist=(tempColor)=>{
-//       for(let i=0; i<newArray.length && tempColor!==newArray[i]; i++){
-//           if(i<newArray.length) return true
-//           return false
-//       }
-//     }
-
-//     for(let i=0; i<color)
-// }
 
 const Circles = () => {
   const [hex, setHex] = useState([])
-  const [shoot, setShoot] = useState([])
   const [input, setInput] = useState('')
+  const [shoot, setShoot] = useState([])
   
   useEffect(() => {
-    
+    // generating random colors and added to the array
       const arr =[]
       var colour
       for(let i=1; i<=5; i++){
@@ -31,6 +21,7 @@ const Circles = () => {
       }
      
        for(let i=1; i<=5; i++){
+         // checking that no same color would generate
          // eslint-disable-next-line
          if(arr[i]==colour){
            return
@@ -40,12 +31,15 @@ const Circles = () => {
        } 
 
   }, [])
-
+  
+  // taking and setting the input from input box
   const handleChange = (e) => {
     
     setInput(e.target.value)
     
   }
+
+  // function to add the circle to empty container
   const shootHandle=()=>{
     // eslint-disable-next-line
     let circle = hex.find((e)=>e[1]==input)
@@ -60,6 +54,8 @@ const Circles = () => {
 
   }
   
+
+  //// function to get back the circle from container
   const handleCircleRevert=(e)=>{
     // eslint-disable-next-line
     let circle = shoot.filter((x)=>e[1]!=x[1])
@@ -71,12 +67,7 @@ const Circles = () => {
   
  
   
-//  const addToList = (e)=>{
 
-//   const parent = document.getElementById("circleBox1")
-//   parent.append(e.target)
-
-//  }
   return (
     <div className='circleBox' id='circleBox1'>
       
@@ -84,7 +75,7 @@ const Circles = () => {
         {shoot.map((e)=>{
           return(
             <div onClick={()=>handleCircleRevert(e)}>
-              <Container key={e[1]} color={e[0]} number={e[1]}/>
+              <Container key={uuid()} color={e[0]} number={e[1]}/>
             </div>
           )
         })}
@@ -92,7 +83,7 @@ const Circles = () => {
       
       
      <div className='circle_div'>
-      {hex.map((e) => <CircleContainer key={e[1]} color={e[0]} number={e[1]} />)}
+      {hex.map((e) => <CircleContainer  key={uuid()} color={e[0]} number={e[1]} />)}
       </div>
     <div className='button-box'>
     
