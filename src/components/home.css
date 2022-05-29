@@ -12,7 +12,7 @@
 }
 .container_div{
     width: 40%;
-    border: 1px solid black;
+   
     display: flex;
     height: 300px;
     margin-top: 150px;
@@ -21,7 +21,7 @@
 }
 .circle_div{
     align-items: center;
-    border: 1px solid black;
+    
     background-color: white;
     margin-left: 6%;
     height: max-content;
@@ -29,7 +29,7 @@
     
 }
 .button-box{
-    border: 1px solid black;
+   
    justify-content: baseline;
    height: max-content;
    margin-top: 400px;

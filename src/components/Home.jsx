@@ -7,7 +7,7 @@ import Circles from "./Circles"
 const Home = () => {
   return (
     <div className='container'>
-   
+         
         <Circles/>
 
     </div>

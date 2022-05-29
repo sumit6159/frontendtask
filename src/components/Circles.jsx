@@ -75,7 +75,7 @@ const Circles = () => {
         {shoot.map((e)=>{
           return(
             <div onClick={()=>handleCircleRevert(e)}>
-              <Container key={uuid()} color={e[0]} number={e[1]}/>
+              <Container key={uuid()} color={e[0]} circleNumber={e[1]} />
             </div>
           )
         })}
@@ -83,7 +83,7 @@ const Circles = () => {
       
       
      <div className='circle_div'>
-      {hex.map((e) => <CircleContainer  key={uuid()} color={e[0]} number={e[1]} />)}
+      {hex.map((e) => <CircleContainer  key={uuid()} color={e[0]} circleNumber={e[1]} />)}
       </div>
     <div className='button-box'>
     
